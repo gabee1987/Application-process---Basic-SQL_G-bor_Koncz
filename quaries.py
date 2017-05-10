@@ -74,7 +74,8 @@ def jemimas_new_phone_number():  # Updates and shows Jemima's new phone number
 
 
 def application_cancel():  # Deletes the datas with this email domain: @mauriseu.net
-    cur.execute("""DELETE * FROM applicants\
+    cur.execute("""DELETE FROM applicants\
                 WHERE email LIKE '%@mauriseu.net';""")
+
 
 

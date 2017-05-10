@@ -117,6 +117,7 @@ def menu6():  # Shows the full_name and phone_number of the real owner of the ha
 
 def menu7():  # Creates and shows all the data of the new applicant
     print("New Applicant\n")
+    new_applicant()
     print_table(new_applicant(), headers=HEADERS["Menu7"])
     print("To go back hit Enter without input")
     print("0. Quit")
@@ -126,6 +127,7 @@ def menu7():  # Creates and shows all the data of the new applicant
 
 def menu8():  # Updates and shows Jemima's new phone number
     print("Jemima\'s new phone number\n")
+    jemimas_new_phone_number()
     print_table(jemimas_new_phone_number(), headers=HEADERS["Menu8"])
     print("To go back hit Enter without input")
     print("0. Quit")
@@ -135,6 +137,7 @@ def menu8():  # Updates and shows Jemima's new phone number
 
 def menu9():  # Deletes the datas with this email domain: @mauriseu.net
     print("Cancel application request\n")
+    application_cancel()
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
