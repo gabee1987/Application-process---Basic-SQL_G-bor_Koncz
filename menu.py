@@ -1,6 +1,7 @@
 import sys
 import os
 import psycopg2
+import time
 
 menu_actions = {}
 
@@ -37,74 +38,84 @@ def execute_menu(choice):
             menu_actions[ch]()
         except KeyError:
             print("Invalid selection, please try again.\n")
+            time.sleep(1)
             menu_actions['main_menu']
         except TypeError:
             print("Invalid selection, please try again.\n")
+            time.sleep(1)
             menu_actions['main_menu']
 
 
-
 def menu1():
-    print("Hello Menu 1 !\n")
-    print("9. Back")
+    print("Mentors Table\n")
+    print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
 
 
-
 def menu2():
-    print("Hello Menu 2 !\n")
-    print("9. Back")
-    print("0. Quit" )
+    print("Applicants Table!\n")
+    print("To go back hit Enter without input")
+    print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
-
 
 
 def menu3():
-    print("Hello Menu 2 !\n")
-    print("9. Back")
-    print("0. Quit" )
+    print("Name of Mentors!\n")
+    print("To go back hit Enter without input")
+    print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
-
 
 
 def menu4():
-    print("Hello Menu 2 !\n")
-    print("9. Back")
-    print("0. Quit" )
+    print("Nicknames of mentors working at Miskolc!\n")
+    print("To go back hit Enter without input")
+    print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
-
 
 
 def menu5():
-    print("Hello Menu 2 !\n")
-    print("9. Back")
-    print("0. Quit" )
+    print("Carol\'s phone number who lost her hat!\n")
+    print("To go back hit Enter without input")
+    print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
-
 
 
 def menu6():
-    print("Hello Menu 2 !\n")
-    print("9. Back")
-    print("0. Quit" )
+    print("The real owner of the hat\n")
+    print("To go back hit Enter without input")
+    print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
-
 
 
 def menu7():
-    print("Hello Menu 2 !\n")
-    print("9. Back")
-    print("0. Quit" )
+    print("New Applicant\n")
+    print("To go back hit Enter without input")
+    print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
 
+
+def menu8():
+    print("Jemima\'s new phone number\n")
+    print("To go back hit Enter without input")
+    print("0. Quit")
+    choice = input(" >>  ")
+    execute_menu(choice)
+
+
+def menu9():
+    print("Cancel application request\n")
+    print("To go back hit Enter without input")
+    print("0. Quit")
+    choice = input(" >>  ")
+    execute_menu(choice)
 
 
 def back():
@@ -115,15 +126,20 @@ def exit():
     sys.exit()
 
 
-
-
 menu_actions = {
     'main_menu': main_menu,
     '1': menu1,
     '2': menu2,
-    '9': back,
+    '3': menu3,
+    '4': menu4,
+    '5': menu5,
+    '6': menu6,
+    '7': menu7,
+    '8': menu8,
+    '9': menu9,
+    '10': back,
     '0': exit,
-}
+    }
 
 
 if __name__ == "__main__":
