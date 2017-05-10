@@ -32,7 +32,7 @@ HEADERS = {
                     "First name",
                     "Last name"
                     ],
-            "Menu4": "Nicknames",
+            "Menu4": ["Nicknames"],
             "Menu5": [
                     "Full name",
                     "Phone number"

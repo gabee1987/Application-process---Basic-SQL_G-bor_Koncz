@@ -60,6 +60,7 @@ def new_applicant():  # Creates and shows all the data of the new applicant
     cur.execute("""SELECT * FROM applicants\
                 WHERE application_code='54823';""")
     new_applicant_data = cur.fetchall()
+    cur.execute("""DELETE FROM applicants WHERE application_code = '54823';""")
     return new_applicant_data
 
 
