@@ -22,5 +22,15 @@ HEADERS = {
                     "Phone number",
                     "Email",
                     "Application code"
+                    ],
+            "Menu3": [
+                    "First name",
+                    "Last name"
+                    ],
+            "Menu4": "Nicknames",
+            "Menu5": [
+                    "Full name",
+                    "Phone number"
                     ]
+
             }

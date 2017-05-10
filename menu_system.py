@@ -12,19 +12,19 @@ def main_menu():
     print("Welcome to Gabor Koncz's Application process - Basic SQL program\n")
     print("Please select an option\n")
     menu_options = [
-                'Mentors Table',
-                'Applicants Table'
-                'Name of Mentors',
-                'Nicknames of mentors working at Miskolc',
-                'Carol\'s phone number who lost her hat',
-                'The real owner of the hat',
-                'New Applicant',
-                'Jemima\'s new phone number',
-                'Cancel application request',
+                "Mentors Table",
+                "Applicants Table",
+                "Name of Mentors",
+                "Nicknames of mentors working at Miskolc",
+                "Carol\'s phone number who lost her hat",
+                "The real owner of the hat",
+                "New Applicant",
+                "Jemima\'s new phone number",
+                "Cancel application request"
                 ]
     for index, option in enumerate(menu_options):
         print("({0}) {1}".format(index + 1, option))
-    print("(0) {0}".format('Exit'))
+    print("(0) {0}".format("Exit"))
     choice = input(" >>  ")
     execute_menu(choice)
 
@@ -33,7 +33,7 @@ def execute_menu(choice):
     os.system('clear')
     ch = choice.lower()
     if ch == '':
-        menu_actions['main_menu']
+        menu_actions["main_menu"]
     else:
         try:
             menu_actions[ch]()
@@ -67,7 +67,7 @@ def menu2():
 
 def menu3():
     print("Name of Mentors!\n")
-    print_table(name_of_mentors(), headers=["First name", "Last name"])
+    print_table(name_of_mentors(), headers=HEADERS["Menu3"])
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
@@ -76,6 +76,7 @@ def menu3():
 
 def menu4():
     print("Nicknames of mentors working at Miskolc!\n")
+    print_table(nicknames_of_mentors(), headers=HEADERS["Menu4"])
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
@@ -84,6 +85,7 @@ def menu4():
 
 def menu5():
     print("Carol\'s phone number who lost her hat!\n")
+    print_table(carols_phone_number(), headers=HEADERS["Menu5"])
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
@@ -123,7 +125,7 @@ def menu9():
 
 
 def back():
-    menu_actions['main_menu']
+    menu_actions["main_menu"]
 
 
 def exit():
@@ -131,7 +133,7 @@ def exit():
 
 
 menu_actions = {
-    'main_menu': main_menu,
+    "main_menu": main_menu,
     '1': menu1,
     '2': menu2,
     '3': menu3,
@@ -141,6 +143,5 @@ menu_actions = {
     '7': menu7,
     '8': menu8,
     '9': menu9,
-    '10': back,
     '0': exit,
     }
