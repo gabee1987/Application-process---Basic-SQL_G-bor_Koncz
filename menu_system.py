@@ -1,7 +1,8 @@
 import sys
 import os
-import psycopg2
 import time
+from quaries import *
+from display import *
 
 menu_actions = {}
 
@@ -48,6 +49,7 @@ def execute_menu(choice):
 
 def menu1():
     print("Mentors Table\n")
+    print_table(mentors_all(), headers=HEADERS["Menu1"])
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
@@ -56,6 +58,7 @@ def menu1():
 
 def menu2():
     print("Applicants Table!\n")
+    print_table(applicants_all(), headers=HEADERS["Menu2"])
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
@@ -64,6 +67,7 @@ def menu2():
 
 def menu3():
     print("Name of Mentors!\n")
+    print_table(name_of_mentors(), headers=["First name", "Last name"])
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
