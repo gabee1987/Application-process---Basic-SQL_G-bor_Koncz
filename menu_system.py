@@ -140,7 +140,3 @@ menu_actions = {
     '10': back,
     '0': exit,
     }
-
-
-if __name__ == "__main__":
-    main_menu()

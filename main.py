@@ -1,4 +1,4 @@
-from menu import *
+from menu_system import *
 from quaries import *
 from display import *
 import os
@@ -6,13 +6,10 @@ import sys
 import time
 
 
-
 def main():
-    main_menu()
-
-
+    while True:
+        main_menu()
 
 
 if __name__ == "__main__":
-    while True:
-        main()
+    main()
