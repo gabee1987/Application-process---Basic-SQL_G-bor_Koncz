@@ -1,3 +1,8 @@
+"""
+    Basic SQL assaignment main module
+    by Gabor Koncz
+"""
+
 from menu_system import *
 from quaries import *
 from display import *

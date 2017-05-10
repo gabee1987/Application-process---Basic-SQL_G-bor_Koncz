@@ -1,3 +1,8 @@
+"""
+    Basic SQL assaignment menu handler module
+    by Gabor Koncz
+"""
+
 import sys
 import os
 import time
@@ -8,6 +13,10 @@ menu_actions = {}
 
 
 def main_menu():
+    """
+        Displays the main menu,
+        where the user can navigate with integer inputs.
+    """
     os.system('clear')
     print("Welcome to Gabor Koncz's Application process - Basic SQL program\n")
     print("Please select an option\n")
@@ -30,6 +39,10 @@ def main_menu():
 
 
 def execute_menu(choice):
+    """
+        Handles the menu navigation,
+        displays the appropiate menu.
+    """
     os.system('clear')
     ch = choice.lower()
     if ch == '':
@@ -47,7 +60,8 @@ def execute_menu(choice):
             menu_actions['main_menu']
 
 
-def menu1():
+# Menu options
+def menu1():  # Shows all data from mentors table
     print("Mentors Table\n")
     print_table(mentors_all(), headers=HEADERS["Menu1"])
     print("To go back hit Enter without input")
@@ -56,7 +70,7 @@ def menu1():
     execute_menu(choice)
 
 
-def menu2():
+def menu2():  # Shows all data from applicants table
     print("Applicants Table!\n")
     print_table(applicants_all(), headers=HEADERS["Menu2"])
     print("To go back hit Enter without input")
@@ -65,7 +79,7 @@ def menu2():
     execute_menu(choice)
 
 
-def menu3():
+def menu3():  # Shows the first_name and last_name from mentors table
     print("Name of Mentors!\n")
     print_table(name_of_mentors(), headers=HEADERS["Menu3"])
     print("To go back hit Enter without input")
@@ -74,7 +88,7 @@ def menu3():
     execute_menu(choice)
 
 
-def menu4():
+def menu4():  # Shows the nicknames of mentors from Miskolc
     print("Nicknames of mentors working at Miskolc!\n")
     print_table(nicknames_of_mentors(), headers=HEADERS["Menu4"])
     print("To go back hit Enter without input")
@@ -83,7 +97,7 @@ def menu4():
     execute_menu(choice)
 
 
-def menu5():
+def menu5():  # Shows the full_name and phone_number of the girl who lost her hat
     print("Carol\'s phone number who lost her hat!\n")
     print_table(carols_phone_number(), headers=HEADERS["Menu5"])
     print("To go back hit Enter without input")
@@ -92,31 +106,34 @@ def menu5():
     execute_menu(choice)
 
 
-def menu6():
+def menu6():  # Shows the full_name and phone_number of the real owner of the hat
     print("The real owner of the hat\n")
+    print_table(real_owner_of_hat(), headers=HEADERS["Menu6"])
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
 
 
-def menu7():
+def menu7():  # Creates and shows all the data of the new applicant
     print("New Applicant\n")
+    print_table(new_applicant(), headers=HEADERS["Menu7"])
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
 
 
-def menu8():
+def menu8():  # Updates and shows Jemima's new phone number
     print("Jemima\'s new phone number\n")
+    print_table(jemimas_new_phone_number(), headers=HEADERS["Menu8"])
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
     execute_menu(choice)
 
 
-def menu9():
+def menu9():  # Deletes the datas with this email domain: @mauriseu.net
     print("Cancel application request\n")
     print("To go back hit Enter without input")
     print("0. Quit")
