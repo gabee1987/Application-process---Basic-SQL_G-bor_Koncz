@@ -138,6 +138,7 @@ def menu8():  # Updates and shows Jemima's new phone number
 def menu9():  # Deletes the datas with this email domain: @mauriseu.net
     print("Cancel application request\n")
     application_cancel()
+    print("Data deleted!\n")
     print("To go back hit Enter without input")
     print("0. Quit")
     choice = input(" >>  ")
