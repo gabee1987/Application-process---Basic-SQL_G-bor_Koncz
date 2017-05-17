@@ -8,7 +8,7 @@ import sys
 
 
 try:
-    conn_string = "host='localhost' dbname='gabee' user='gabee' password='mamalaz1'"  # our connection string
+    conn_string = "host='localhost' dbname='gabee' user='gabee' password='********'"  # our connection string
 except:
     print("Unable to connect to the database")
 conn = psycopg2.connect(conn_string)  # connection to the database

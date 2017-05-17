@@ -10,9 +10,11 @@ import os
 import sys
 import time
 
+running = True
+
 
 def main():
-    while True:
+    while running is True:
         main_menu()
 
 
