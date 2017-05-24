@@ -6,10 +6,10 @@
 '''
 
 mentors_query = """SELECT mentors.first_name, mentors.last_name, schools.name, schools.country\
-                                FROM mentors\
-                                INNER JOIN schools\
-                                ON mentors.city=schools.city\
-                                ORDER BY mentors.id;"""
+                    FROM mentors\
+                    INNER JOIN schools\
+                    ON mentors.city=schools.city\
+                    ORDER BY mentors.id;"""
 
 
 all_school_query = """SELECT mentors.first_name, mentors.last_name, schools.name, schools.country\
@@ -25,4 +25,11 @@ mentors_by_country_query = """SELECT schools.country,\
                                 LEFT JOIN schools\
                                 ON mentors.city=schools.city\
                                 GROUP BY country;"""
+
+
+contacts_query = """SELECT schools.name, mentors.first_name, mentors.last_name\
+                    FROM schools\
+                    INNER JOIN mentors\
+                    ON schools.contact_person=mentors.id\
+                    ORDER BY schools.name;"""
 

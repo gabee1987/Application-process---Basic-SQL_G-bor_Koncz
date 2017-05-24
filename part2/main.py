@@ -84,5 +84,25 @@ def mentors_by_country():
                             )
 
 
+@app.route('/contacts')
+def contacts():
+    '''
+        Displays the /contacts page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'School name',
+                    'First name',
+                    'Last name'
+                    ]
+    query = contacts_query
+    contacts_data = query_manager(query, 'all_data')
+    return render_template(
+                            'contacts.html',
+                            table_headers=table_headers,
+                            contacts_data=contacts_data
+                            )
+
+
 if __name__ == '__main__':
     app.run(debug=True)
