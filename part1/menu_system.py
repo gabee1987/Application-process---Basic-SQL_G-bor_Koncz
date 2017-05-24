@@ -6,7 +6,7 @@
 import sys
 import os
 import time
-from quaries import *
+from queries import *
 from display import *
 
 menu_actions = {}
