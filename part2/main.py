@@ -30,13 +30,18 @@ def mentors():
         Shows the data as a table.
     '''
     table_headers = [
-                    'Mentor name',
+                    'First name',
+                    'Last name',
                     'School name',
                     'Country'
                     ]
-    query = mentors_and_shools_query
+    query = mentors_query
     mentors_data = query_manager(query, 'all_data')
-    return render_template('mentors.html', table_headers=table_headers, mentors_data=mentors_data)
+    return render_template(
+                            'mentors.html',
+                            table_headers=table_headers,
+                            mentors_data=mentors_data
+                            )
 
 
 @app.route('/all-school')
@@ -46,13 +51,37 @@ def all_school():
         Shows the data as a table.
     '''
     table_headers = [
-                    'Mentor name',
+                    'First name',
+                    'Last name',
                     'School name',
                     'Country'
                     ]
     query = all_school_query
     all_school_data = query_manager(query, 'all_data')
-    return render_template('all-school.html', table_headers=table_headers, all_school_data=all_school_data)
+    return render_template(
+                            'all-school.html',
+                            table_headers=table_headers,
+                            all_school_data=all_school_data
+                            )
+
+
+@app.route('/mentors-by-country')
+def mentors_by_country():
+    '''
+        Dsiplays the /mentors-by-country page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'Country',
+                    'Number of mentors'
+                    ]
+    query = mentors_by_country_query
+    mentors_by_country_data = query_manager(query, 'all_data')
+    return render_template(
+                            'mentors-by-country.html',
+                            table_headers=table_headers,
+                            mentors_by_country_data=mentors_by_country_data
+                            )
 
 
 if __name__ == '__main__':
