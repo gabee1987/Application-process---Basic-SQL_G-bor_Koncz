@@ -48,7 +48,7 @@ def mentors():
 def all_school():
     '''
         Displays the /all-school page.
-        Shows the data as a table.
+        Shows the datas as a table.
     '''
     table_headers = [
                     'First name',
@@ -69,7 +69,7 @@ def all_school():
 def mentors_by_country():
     '''
         Dsiplays the /mentors-by-country page.
-        Shows the data as a table.
+        Shows the datas as a table.
     '''
     table_headers = [
                     'Country',
@@ -88,7 +88,7 @@ def mentors_by_country():
 def contacts():
     '''
         Displays the /contacts page.
-        Shows the data as a table.
+        Shows the datas as a table.
     '''
     table_headers = [
                     'School name',
@@ -101,6 +101,26 @@ def contacts():
                             'contacts.html',
                             table_headers=table_headers,
                             contacts_data=contacts_data
+                            )
+
+
+@app.route('/applicants')
+def applicants():
+    '''
+        Displays the /applicants page.
+        Shows the datas as a table.
+    '''
+    table_headers = [
+                    'First name',
+                    'Application code',
+                    'Creation date'
+                    ]
+    query = applicants_query
+    applicants_data = query_manager(query, 'all_data')
+    return render_template(
+                           'applicants.html',
+                           table_headers=table_headers,
+                           applicants_data=applicants_data
                             )
 
 

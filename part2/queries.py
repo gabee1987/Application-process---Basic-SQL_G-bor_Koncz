@@ -33,3 +33,11 @@ contacts_query = """SELECT schools.name, mentors.first_name, mentors.last_name\
                     ON schools.contact_person=mentors.id\
                     ORDER BY schools.name;"""
 
+
+applicants_query = """SELECT applicants.first_name, applicants.application_code, applicants_mentors.creation_date\
+                        FROM applicants\
+                        RIGHT JOIN applicants_mentors\
+                        ON applicants.id=applicants_mentors.applicant_id\
+                        WHERE applicants_mentors.creation_date > '2016-01-01'\
+                        ORDER BY applicants_mentors.creation_date DESC;"""
+
