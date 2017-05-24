@@ -4,7 +4,7 @@
 """
 
 from menu_system import *
-from quaries import *
+from queries import *
 from display import *
 import os
 import sys
