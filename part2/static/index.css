@@ -34,25 +34,29 @@ Top menu
 
 /* The navigation bar */
 .menu-top {
+    box-sizing: border-box;
     overflow: hidden;
-    background-color: #757575;
+    background-color: #61a2c8;
     position: fixed;
     top: 0;
-    width: 100%; 
-    /*box-shadow: 0px 3px 15px #888888;*/
+    width: 100%;
+    box-shadow: 0px 2px 8px #888888;
+    margin: 0;
 }
 
 /* Links inside the navbar */
 .menu-top a {
+    box-sizing: border-box;
     float: left;
-    display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
+/* Codecool logo on the navbar */
 .menu-top img {
+    box-sizing: border-box;
     float: right;
     display: block;
     padding-right: 1em;
@@ -62,29 +66,48 @@ Top menu
     
 }
 
-/* Shadow-effect */
-.menu-top {
-    box-shadow: 0px 3px 15px #888888;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+/* Menu links sweep-effect */
+.menu-top a {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
 
-/* Pre-render the bigger shadow, but hide it */
-.menu-top::after {
-    box-shadow: 0px 5px 15px #525252;
-    opacity: 0;
-    opacity: 0;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+.menu-top a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #d9474a;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
 }
 
-.menu-top:hover {
-    box-shadow: 0px 5px 15px #525252;
+.menu-top a:hover, .menu-top a:focus, .menu-top a:active {
+    color: white;
 }
-
-/* Transition to showing the bigger shadow on hover */
-.menu-top:hover::after {
-  opacity: 1;
+.menu-top a:hover:before, .menu-top a:focus:before, .menu-top a:active:before {
+    -webkit-transform: scaleY(1.2);
+    transform: scaleY(1.2);
 }
 
 
@@ -96,7 +119,82 @@ Title
 
 h1 {
     text-align: center;
-    margin-top: 2em;
+    margin-top: 3em;
     box-sizing: border-box;
+    color: #d9474a;
+    text-shadow: 1px 1px 1px #888888;
+}
+
+
+/* 
+==========================================================================
+Links to the queries
+==========================================================================
+*/
+
+.sql-links {
+    box-sizing: border-box;
+    width: 52%;
+    display: block;
+    padding: 10px;
+    margin: auto;
+}
+
+.sql-links ul {
+    list-style-type: none;
+}
+
+/* List elements */
+.sql-links li {
+    float: left;
+    margin: 7px;
+    text-align: center;
+    padding: 1.5em;
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 50px;
+    background-color: #61a2c8;
+    border-radius: 2px;
+    box-shadow: 0px 1px 4px #b0b0b0;
+    border-radius: 2px;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sql-links li::after {
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sql-links li:hover {
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+}
+
+.sql-links li:hover::after {
+    opacity: 1;
+}
+
+.sql-links a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.5em 0em;
+    text-decoration: none;
+    margin: 0;
+    width: 90%;
+    height: 90%;
+    font-size: 1.5em;
 }
 
