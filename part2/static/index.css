@@ -1,0 +1,102 @@
+/*Index page CSS for Application-process---Basic-SQL_part2 assignment 
+    by Gabor Koncz
+*/
+
+
+/* 
+==========================================================================
+Globals
+==========================================================================
+*/
+html {
+    min-height: 100%;
+    margin: auto;
+}
+body {
+    margin: 0;
+    position: center;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    background: fixed;
+    background: -webkit-radial-gradient(circle, #e8e9eb 10%, #a2a5aa 10%); /* Safari 5.1-6.0 */
+    background: -o-radial-gradient(circle, #e8e9eb 10%, #a2a5aa 10%); /* Opera 11.6-12.0 */
+    background: -moz-radial-gradient(circle, #e8e9eb 10%, #a2a5aa 10%); /* Firefox 3.6-15 */
+    background: radial-gradient(circle, #e8e9eb 30%, #a2a5aa 100%); /* Standard syntax */
+}
+
+
+/* 
+==========================================================================
+Top menu
+==========================================================================
+*/
+
+/* The navigation bar */
+.menu-top {
+    overflow: hidden;
+    background-color: #757575;
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    /*box-shadow: 0px 3px 15px #888888;*/
+}
+
+/* Links inside the navbar */
+.menu-top a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu-top img {
+    float: right;
+    display: block;
+    padding-right: 1em;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+/* Shadow-effect */
+.menu-top {
+    box-shadow: 0px 3px 15px #888888;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Pre-render the bigger shadow, but hide it */
+.menu-top::after {
+    box-shadow: 0px 5px 15px #525252;
+    opacity: 0;
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.menu-top:hover {
+    box-shadow: 0px 5px 15px #525252;
+}
+
+/* Transition to showing the bigger shadow on hover */
+.menu-top:hover::after {
+  opacity: 1;
+}
+
+
+/* 
+==========================================================================
+Title
+==========================================================================
+*/
+
+h1 {
+    text-align: center;
+    margin-top: 2em;
+    box-sizing: border-box;
+}
+
