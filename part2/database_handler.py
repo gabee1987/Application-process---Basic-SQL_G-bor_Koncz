@@ -11,7 +11,7 @@ from db_login_config import *
 def query_manager(query, return_data='all_data'):
     '''
         Sets connection with the database and execute the queries.
-        Decides which kind of data need to be returned.
+        Decides what kind of data need to be returned.
     '''
     connect_str = 'dbname={0} user={1} password={2} host={3}'.format(DATABASE, USER, PASSWORD, HOST)
     conn = psycopg2.connect(connect_str)
@@ -22,8 +22,7 @@ def query_manager(query, return_data='all_data'):
     if return_data == 'all_data':
         data_from_query = cursor.fetchall()
         conn.close()
-        list_of_data = [list(element) for element in data_from_query]
-        return list_of_data
+        return data_from_query
     elif return_data == 'one_data':
         data_from_query = cursor.fetchone()
         conn.close()

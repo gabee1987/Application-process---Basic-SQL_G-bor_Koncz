@@ -124,5 +124,26 @@ def applicants():
                             )
 
 
+@app.route('/applicants-and-mentors')
+def applicants_and_mentors():
+    '''
+        Displays the /applicants-and-mentors page.
+        Shows the datas as a table.
+    '''
+    table_headers = [
+                    'First name',
+                    'Application code',
+                    'First name',
+                    'Last name'
+                    ]
+    query = applicants_and_mentors_query
+    applicants_and_mentors_data = query_manager(query, 'all_data')
+    return render_template(
+                            'applicants-and-mentors.html',
+                            table_headers=table_headers,
+                            applicants_and_mentors_data=applicants_and_mentors_data
+                            )
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

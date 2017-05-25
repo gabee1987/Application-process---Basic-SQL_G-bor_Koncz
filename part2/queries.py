@@ -41,3 +41,14 @@ applicants_query = """SELECT applicants.first_name, applicants.application_code,
                         WHERE applicants_mentors.creation_date > '2016-01-01'\
                         ORDER BY applicants_mentors.creation_date DESC;"""
 
+
+applicants_and_mentors_query = """SELECT applicants.first_name, applicants.application_code,\
+                                    COALESCE(mentors.first_name, 'None'),\
+                                    COALESCE(mentors.last_name, 'None')\
+                                    FROM applicants\
+                                    LEFT JOIN applicants_mentors\
+                                    ON applicants.id=applicants_mentors.applicant_id\
+                                    LEFT JOIN mentors\
+                                    ON applicants_mentors.mentor_id=mentors.id
+                                    ORDER BY applicants.id;"""
+
