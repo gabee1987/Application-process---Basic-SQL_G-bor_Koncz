@@ -1,4 +1,4 @@
-/* Index page CSS for Application-process---Basic-SQL_part2 assignment 
+/* Table pages CSS for Application-process---Basic-SQL_part2 assignment 
     by Gabor Koncz
 */
 
@@ -8,12 +8,14 @@
 Globals
 ==========================================================================
 */
+
 html {
     min-height: 100%;
     margin: auto;
 }
 body {
     margin: 0;
+    margin-bottom: 1em;
     position: center;
     font-family: 'Raleway', sans-serif;
     box-sizing: border-box;
@@ -123,76 +125,67 @@ h1 {
     text-shadow: 1px 1px 1px #888888;
 }
 
+h2 {
+    text-align: center;
+    margin-top: 1em;
+    box-sizing: border-box;
+    color: #d9474a;
+    text-shadow: 1px 1px 1px #888888;
+
+}
+
 
 /* 
 ==========================================================================
-Links to the queries
+Table
 ==========================================================================
 */
 
-.sql-links {
+
+.table {
+    border-radius: 3px;
+    background-color: #f0f0f1;
+    position: center;
+    display: table;
     box-sizing: border-box;
-    width: 52%;
-    display: block;
-    padding: 10px;
+    padding: 20px;
     margin: auto;
-}
-
-.sql-links ul {
-    list-style-type: none;
-}
-
-/* List elements */
-.sql-links li {
-    float: left;
-    margin: 7px;
-    text-align: center;
-    padding: 1.5em;
-    position: relative;
-    display: inline-block;
-    width: 400px;
-    height: 50px;
-    background-color: #61a2c8;
-    border-radius: 2px;
-    box-shadow: 0px 1px 4px #b0b0b0;
-    border-radius: 2px;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.sql-links li::after {
-    content: "";
-    border-radius: 5px;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.sql-links li:hover {
-    -webkit-transform: scale(1.05, 1.05);
-    transform: scale(1.05, 1.05);
-}
-
-.sql-links li:hover::after {
-    opacity: 1;
-}
-
-.sql-links a {
-    display: inline-block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 0.5em 0em;
-    text-decoration: none;
-    margin: 0;
     width: 90%;
-    height: 90%;
-    font-size: 1.5em;
+    box-shadow: 0px 2px 8px #888888;
 }
 
+.table table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+.table th {
+    border: 1px solid #ddd;
+    font-size: 1.2em;
+    background-color: #61a2c8;
+    color: #ffffff;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.table tr {
+    background-color: #f3f3f3;  
+}
+
+.table tr:nth-child(even) {
+    background-color: #e4e4e5;
+}
+
+.table tr:hover {
+    background-color: #dc6f71;
+    color: #ffffff;
+}
