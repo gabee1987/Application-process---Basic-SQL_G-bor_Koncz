@@ -145,5 +145,10 @@ def applicants_and_mentors():
                             )
 
 
+@app.errorhandler(404)
+def error_hadler(error):
+    return render_template("error.html")
+
+
 if __name__ == '__main__':
     app.run(debug=True)
