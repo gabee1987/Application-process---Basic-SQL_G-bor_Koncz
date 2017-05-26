@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="/static/table.css">
         <link rel="stylesheet" type="text/css"
             href="https://fonts.googleapis.com/css?family=Raleway">
-        <title>Contacts</title>
+        <title>Mentors and schools</title>
     </head>
     <body>
         <div class="menu-top">
@@ -28,8 +28,8 @@
                 </li>
             </ul>
         </div>
-        <h1>Application process - SQL part 2</h1>
-        <h2>Contacts</h2>
+        <h1>Application process - SQL part 1</h1>
+        <h2>All mentors</h2>
         <div class="table" style="overflow-x:auto;">
             <table>
                 <tr>
@@ -37,7 +37,7 @@
                         <th>{{ header }}</th>
                     {% endfor %}
                 </tr>
-                    {% for row in contacts_data %}
+                    {% for row in mentors_all_data %}
                         <tr>
                             {% for data in row %}
                                 <td>{{ data }}</td>
@@ -48,3 +48,5 @@
         </div>
     </body>
 </html>
+                        
+

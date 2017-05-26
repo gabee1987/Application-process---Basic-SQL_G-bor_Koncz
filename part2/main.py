@@ -8,6 +8,7 @@ from flask import Flask, request, render_template, redirect
 import psycopg2
 from database_handler import query_manager
 from queries import *
+from queries_part1 import *
 
 
 app = Flask(__name__)
@@ -147,7 +148,45 @@ def applicants_and_mentors():
 
 @app.errorhandler(404)
 def error_hadler(error):
-    return render_template("error.html")
+    return render_template('error.html')
+
+
+# Part 1 queries.
+
+@app.route('/index-part1')
+def index_part1():
+    '''
+        Displays last SI weeks main page, where the user can
+        select the queries.
+    '''
+    return render_template('index-part1.html')
+
+
+@app.route('/mentors-all')
+def mentors_all():
+    '''
+        Displays the /mentors-all page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'Id',
+                    'First name',
+                    'Last name',
+                    'Nickname',
+                    'Phone number',
+                    'Email',
+                    'City',
+                    'Favourite number'
+                    ]
+    query = mentors_all_query
+    mentors_all_data = query_manager(query, 'all_data')
+    return render_template(
+                            'mentors-all.html',
+                            table_headers=table_headers,
+                            mentors_all_data=mentors_all_data
+                            )
+
+
 
 
 if __name__ == '__main__':
