@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/static/index.css">
+        <link rel="stylesheet" href="/static/table.css">
         <link rel="stylesheet" type="text/css"
             href="https://fonts.googleapis.com/css?family=Raleway">
-        <title>Application process - SQL part 1</title>
+        <title>Name of mentors</title>
     </head>
     <body>
         <div class="menu-top">
@@ -29,15 +29,24 @@
             </ul>
         </div>
         <h1>Application process - SQL part 1</h1>
-        <div class="sql-links">
-            <ul>
-                <li><a href="/mentors-all">All mentors page</a></li>
-                <li><a href="/applicants-all">All applicants page</a></li>
-                <li><a href="/name-of-mentors">Name of mentors page</a></li>
-                <li><a href="/contacts">Contacts page</a></li>
-                <li><a href="/applicants">Applicants page</a></li>
-                <li><a href="/applicants-and-mentors">Applicants and mentors page</a></li>
-            </ul>
+        <h2>Name of mentors</h2>
+        <div class="table" style="overflow-x:auto;">
+            <table>
+                <tr>
+                    {% for header in table_headers %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                    {% for row in name_of_mentors_data %}
+                        <tr>
+                            {% for data in row %}
+                                <td>{{ data }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+            </table>
         </div>
     </body>
 </html>
+                        
+
