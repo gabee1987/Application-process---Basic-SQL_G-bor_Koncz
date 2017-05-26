@@ -187,6 +187,29 @@ def mentors_all():
                             )
 
 
+@app.route('/applicants-all')
+def applicants_all():
+    '''
+        Displays the /mentors-all page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'Id',
+                    'First name',
+                    'Last name',
+                    'Phone number',
+                    'Email',
+                    'Application code'
+                    ]
+    query = applicants_all_query
+    applicants_all_data = query_manager(query, 'all_data')
+    return render_template(
+                            'applicants-all.html',
+                            table_headers=table_headers,
+                            applicants_all_data=applicants_all_data
+                            )
+
+
 
 
 if __name__ == '__main__':

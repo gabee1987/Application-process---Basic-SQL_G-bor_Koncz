@@ -8,3 +8,4 @@
 mentors_all_query = """SELECT * FROM mentors ORDER BY first_name ASC;"""
 
 
+applicants_all_query = """SELECT * FROM applicants ORDER BY first_name ASC;"""
