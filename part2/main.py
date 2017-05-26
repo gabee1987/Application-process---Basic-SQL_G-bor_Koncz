@@ -190,7 +190,7 @@ def mentors_all():
 @app.route('/applicants-all')
 def applicants_all():
     '''
-        Displays the /mentors-all page.
+        Displays the /applicants-all page.
         Shows the data as a table.
     '''
     table_headers = [
@@ -213,7 +213,7 @@ def applicants_all():
 @app.route('/name-of-mentors')
 def name_of_mentors():
     '''
-        Displays the /mentors-all page.
+        Displays the /name-of-mentors page.
         Shows the data as a table.
     '''
     table_headers = [
@@ -226,6 +226,24 @@ def name_of_mentors():
                             'name-of-mentors.html',
                             table_headers=table_headers,
                             name_of_mentors_data=name_of_mentors_data
+                            )
+
+
+@app.route('/nicknames-of-mentors')
+def nicknames_of_mentors():
+    '''
+        Displays the /nicknames-of-mentors page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'Nicknames'
+                    ]
+    query = nicknames_of_mentors_query
+    nicknames_of_mentors_data = query_manager(query, 'all_data')
+    return render_template(
+                            'nicknames-of-mentors.html',
+                            table_headers=table_headers,
+                            nicknames_of_mentors_data=nicknames_of_mentors_data
                             )
 
 
