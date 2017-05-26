@@ -24,3 +24,7 @@ carols_phone_number_query = """SELECT first_name || ' ' || last_name, phone_numb
                                 FROM applicants\
                                 WHERE first_name='Carol';"""
 
+real_owner_of_hat_query = """SELECT first_name || ' ' || last_name, phone_number\
+                                FROM applicants\
+                                WHERE email LIKE '%@adipiscingenimmi.edu';"""
+

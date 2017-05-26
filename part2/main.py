@@ -266,6 +266,25 @@ def carols_phone_number():
                             )
 
 
+@app.route('/real-owner-of-hat')
+def real_owner_of_hat():
+    '''
+        Displays the /real-owner-of-hat page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'Full name',
+                    'Phone number'
+                    ]
+    query = real_owner_of_hat_query
+    real_owner_of_hat_data = query_manager(query, 'all_data')
+    return render_template(
+                            'real-owner-of-hat.html',
+                            table_headers=table_headers,
+                            real_owner_of_hat_data=real_owner_of_hat_data
+                            )
+
+
 
 
 if __name__ == '__main__':
