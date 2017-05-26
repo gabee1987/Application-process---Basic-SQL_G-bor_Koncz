@@ -247,6 +247,25 @@ def nicknames_of_mentors():
                             )
 
 
+@app.route('/carols-phone-number')
+def carols_phone_number():
+    '''
+        Displays the /carols-phone-number page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'Full name',
+                    'Phone number'
+                    ]
+    query = carols_phone_number_query
+    carols_phone_number_data = query_manager(query, 'all_data')
+    return render_template(
+                            'carols-phone-number.html',
+                            table_headers=table_headers,
+                            carols_phone_number_data=carols_phone_number_data
+                            )
+
+
 
 
 if __name__ == '__main__':

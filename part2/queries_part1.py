@@ -5,12 +5,22 @@
     by Gabor Koncz
 '''
 
-mentors_all_query = """SELECT * FROM mentors ORDER BY first_name ASC;"""
+mentors_all_query = """SELECT *\
+                        FROM mentors\
+                        ORDER BY first_name ASC;"""
 
+applicants_all_query = """SELECT *\
+                            FROM applicants\
+                            ORDER BY first_name ASC;"""
 
-applicants_all_query = """SELECT * FROM applicants ORDER BY first_name ASC;"""
+name_of_mentors_query = """SELECT first_name, last_name\
+                            FROM mentors;"""
 
+nicknames_of_mentors_query = """SELECT nick_name\
+                                FROM mentors\
+                                WHERE city='Miskolc';"""
 
-name_of_mentors_query = """SELECT first_name, last_name FROM mentors;"""
+carols_phone_number_query = """SELECT first_name || ' ' || last_name, phone_number\
+                                FROM applicants\
+                                WHERE first_name='Carol';"""
 
-nicknames_of_mentors_query = """SELECT nick_name FROM mentors WHERE city='Miskolc';"""
