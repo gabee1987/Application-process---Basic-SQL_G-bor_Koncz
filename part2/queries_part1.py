@@ -46,11 +46,10 @@ jemimas_new_phone_number_query = """SELECT first_name || ' ' || last_name, phone
                                     WHERE first_name='Jemima' AND last_name='Foreman';"""
 
 application_cancel_delete_query = """DELETE FROM applicants_mentors\
-                                        WHERE NOT EXISTS (\
-                                        SELECT *\
-                                        FROM applicants\
-                                        WHERE applicants.id = applicants_mentors.applicant_id AND applicants.email LIKE '%@mauriseu.net');"""
+                                        WHERE applicant_id IN (SELECT id FROM applicants WHERE email LIKE '%@mauriseu.net');"""
 
+application_cancel_delete_query2 = """DELETE FROM applicants\
+                                        WHERE email LIKE '%@mauriseu.net';"""
 
 
 #"""DELETE FROM applicants\

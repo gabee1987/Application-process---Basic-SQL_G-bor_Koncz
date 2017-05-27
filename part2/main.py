@@ -354,6 +354,8 @@ def application_cancel():
                     ]
     query = application_cancel_delete_query
     query_manager(query, 'no_data')
+    query = application_cancel_delete_query2
+    query_manager(query, 'no_data')
     query = applicants_all_query
     applicants_all_data = query_manager(query, 'all_data')
     return render_template(
