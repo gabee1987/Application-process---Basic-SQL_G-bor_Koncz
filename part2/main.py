@@ -306,6 +306,8 @@ def new_applicant():
     query_manager(query, 'no_data')
     query = new_applicant_query
     new_applicant_data = query_manager(query, 'all_data')
+    query = new_applicant_delete_query
+    query_manager(query, 'no_data')
     return render_template(
                             'new-applicant.html',
                             table_headers=table_headers,

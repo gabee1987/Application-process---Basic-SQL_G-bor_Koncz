@@ -35,6 +35,8 @@ new_applicant_insert_query = """INSERT INTO applicants\
 new_applicant_query = """SELECT * FROM applicants\
                             WHERE application_code='54823';"""
 
+new_applicant_delete_query = """DELETE FROM applicants WHERE application_code = '54823';"""
+
 jemimas_new_phone_number_update_query = """UPDATE applicants\
                                             SET phone_number = '003670/223-7459'\
                                             WHERE first_name='Jemima' AND last_name='Foreman'"""
