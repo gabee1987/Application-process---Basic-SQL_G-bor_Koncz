@@ -51,7 +51,8 @@ application_cancel_delete_query = """DELETE FROM applicants_mentors\
 application_cancel_delete_query2 = """DELETE FROM applicants\
                                         WHERE email LIKE '%@mauriseu.net';"""
 
+application_cancel_reinsert_query = """INSERT INTO applicants\
+                                        (first_name, last_name, phone_number, email, application_code)\
+                                        VALUES ('Bill', 'Gates', '006404/640-6464', 'microsoft@mauriseu.net', '64640');"""
 
-#"""DELETE FROM applicants\
-#WHERE email LIKE '%@mauriseu.net';"""
 

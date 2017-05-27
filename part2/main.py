@@ -4,7 +4,7 @@
     by Gabor Koncz
 '''
 
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, url_for
 import psycopg2
 from database_handler import query_manager
 from queries import *
@@ -363,6 +363,17 @@ def application_cancel():
                             table_headers=table_headers,
                             applicants_all_data=applicants_all_data
                             )
+
+
+@app.route('/application-cancel-reinsert', methods=['POST'])
+def application_cancel_reinsert():
+    '''
+        Reinsert the application_cancel data,
+        to be able to test again the delete query.
+    '''
+    query = application_cancel_reinsert_query
+    query_manager(query, 'no_data')
+    return redirect(url_for('index_part1'))
 
 
 
