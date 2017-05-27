@@ -150,8 +150,10 @@ def applicants_and_mentors():
 def error_hadler(error):
     return render_template('error.html')
 
-
+# ==========================================================================
 # Part 1 queries.
+# ==========================================================================
+
 
 @app.route('/index-part1')
 def index_part1():
@@ -282,6 +284,80 @@ def real_owner_of_hat():
                             'real-owner-of-hat.html',
                             table_headers=table_headers,
                             real_owner_of_hat_data=real_owner_of_hat_data
+                            )
+
+
+@app.route('/new-applicant')
+def new_applicant():
+    '''
+        Adds the new data to the database.
+        Displays the /new-applicant page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'Id',
+                    'First name',
+                    'Last name',
+                    'Phone number',
+                    'Email',
+                    'Application code'
+                    ]
+    query = new_applicant_insert_query
+    query_manager(query, 'no_data')
+    query = new_applicant_query
+    new_applicant_data = query_manager(query, 'all_data')
+    return render_template(
+                            'new-applicant.html',
+                            table_headers=table_headers,
+                            new_applicant_data=new_applicant_data
+                            )
+
+
+@app.route('/jemimas-new-phone-number')
+def jemimas_new_phone_number():
+    '''
+        Updates data in the database.
+        Displays the /jemimas-new-phone-number page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'Full name',
+                    'Phone number'
+                    ]
+    query = jemimas_new_phone_number_update_query
+    query_manager(query, 'no_data')
+    query = jemimas_new_phone_number_query
+    jemimas_new_phone_number_data = query_manager(query, 'all_data')
+    return render_template(
+                            'jemimas-new-phone-number.html',
+                            table_headers=table_headers,
+                            jemimas_new_phone_number_data=jemimas_new_phone_number_data
+                            )
+
+
+@app.route('/application-cancel')
+def application_cancel():
+    '''
+        Deletes the data from the database.
+        Displays the /applicants-all page.
+        Shows the data as a table.
+    '''
+    table_headers = [
+                    'Id',
+                    'First name',
+                    'Last name',
+                    'Phone number',
+                    'Email',
+                    'Application code'
+                    ]
+    query = application_cancel_delete_query
+    query_manager(query, 'no_data')
+    query = applicants_all_query
+    applicants_all_data = query_manager(query, 'all_data')
+    return render_template(
+                            'application-cancel.html',
+                            table_headers=table_headers,
+                            applicants_all_data=applicants_all_data
                             )
 
 
