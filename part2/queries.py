@@ -49,7 +49,7 @@ applicants_and_mentors_query = """SELECT applicants.first_name, applicants.appli
                                     LEFT JOIN applicants_mentors\
                                     ON applicants.id=applicants_mentors.applicant_id\
                                     LEFT JOIN mentors\
-                                    ON applicants_mentors.mentor_id=mentors.id
+                                    ON applicants_mentors.mentor_id=mentors.id\
                                     ORDER BY applicants.id;"""
 
 
