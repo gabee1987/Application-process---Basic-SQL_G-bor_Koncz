@@ -52,3 +52,4 @@ applicants_and_mentors_query = """SELECT applicants.first_name, applicants.appli
                                     ON applicants_mentors.mentor_id=mentors.id
                                     ORDER BY applicants.id;"""
 
+

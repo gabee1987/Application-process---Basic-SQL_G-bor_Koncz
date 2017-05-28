@@ -38,6 +38,7 @@ Top menu
     background-color: #61a2c8;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     box-shadow: 0px 2px 8px #888888;
     margin: 0;
@@ -150,6 +151,184 @@ Top menu
 }
 
 
+/* The search box 
+input[type=text] {
+    margin: 5px 10px;
+    float: right;
+    height: 40px;
+    width: 130px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/static/img/search_icon.png');
+    background-size: 1.3em 1.3em;
+    background-position: 0.5em 0.6em; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 20%;
+}
+*/
+
+/* 
+==========================================================================
+Sidebar
+==========================================================================
+*/
+
+.sidebar h2 h3 {
+    position: relative;
+    float: left;
+}
+
+.sidebar_icon {
+    margin: 50px 0 0 20px;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    color: #ffffff;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #61a2c8;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar input {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #61a2c8;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar input:hover, .offcanvas input:focus{
+    color: #d9474a;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar ul{
+    text-align: center;
+    list-style: none;
+    margin: auto;
+    padding: 0;
+	overflow: auto;
+}
+
+.sidebar ul li{
+    color: #ffffff;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 5em;
+}
+
+.sidebar ul li input[type=radio]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.sidebar ul li label{
+    display: block;
+    position: relative;
+    font-weight: 300;
+    font-size: 1.35em;
+    padding: 25px 25px 25px 25px;
+    margin: auto;
+    height: 1em;
+    z-index: 1;
+    cursor: pointer;
+    -webkit-transition: all 0.25s linear;
+}
+
+.sidebar ul li:hover label{
+	color: #FFFFFF;
+}
+
+.sidebar ul li .check{
+    display: block;
+    position: absolute;
+    border: 5px solid #AAAAAA;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    top: 30px;
+    left: 20px;
+    z-index: 5;
+    transition: border .25s linear;
+    -webkit-transition: border .25s linear;
+}
+
+.sidebar ul li:hover .check {
+    border: 5px solid #FFFFFF;
+}
+
+.sidebar ul li .check::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
+    top: 5px;
+    left: 5px;
+    margin: auto;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+}
+
+.sidebar input[type=radio]:checked ~ .check {
+    border: 5px solid #d9474a;
+}
+
+.sidebar input[type=radio]:checked ~ .check::before{
+    background: #d9474a;
+}
+
+.sidebar input[type=radio]:checked ~ label{
+    color: #d9474a;
+}
+
+
+
+#main {
+    position: center;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar input {font-size: 18px;}
+}
+
+
+
 
 /* 
 ==========================================================================
@@ -174,7 +353,7 @@ Links to the queries
 
 .sql-links {
     box-sizing: border-box;
-    width: 52%;
+    width: 50%;
     display: block;
     padding: 10px;
     margin: auto;

@@ -6,7 +6,7 @@
 
 from flask import Flask, request, render_template, redirect, url_for
 import psycopg2
-from database_handler import query_manager
+from database_handler import query_manager, search_database_manager
 from queries import *
 from queries_part1 import *
 
@@ -144,6 +144,51 @@ def applicants_and_mentors():
                             table_headers=table_headers,
                             applicants_and_mentors_data=applicants_and_mentors_data
                             )
+
+
+@app.route('/search', methods=["GET", "POST"])
+def search():
+    '''
+        Displays the /search page.
+        Shows the datas as a table.
+    '''
+    database = request.form['database']
+    search = request.form['search']
+    mentor_data = None
+    applicant_data = None
+
+    if database == 'mentors':
+        table_headers = [
+                    'Id',
+                    'First name',
+                    'Last name',
+                    'Nickname',
+                    'Phone number',
+                    'Email',
+                    'City',
+                    'Favourite number'
+                    ]
+        mentor_data = search_database_manager(database, search)
+    elif database == 'applicants':
+        table_headers = [
+                    'Id',
+                    'First name',
+                    'Last name',
+                    'Phone number',
+                    'Email',
+                    'Application code'
+                    ]
+        applicant_data = search_database_manager(database, search)
+    return render_template(
+                            'search.html',
+                            mentor_data=mentor_data,
+                            applicant_data=applicant_data,
+                            table_headers=table_headers
+                            )
+
+
+
+    
 
 
 @app.errorhandler(404)
