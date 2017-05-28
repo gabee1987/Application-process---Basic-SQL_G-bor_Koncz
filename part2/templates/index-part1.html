@@ -9,49 +9,81 @@
         <title>Application process - SQL part 1</title>
     </head>
     <body>
-        <div class="menu-top">
-            <img src="/static/img/codecool_logo.svg" alt="Codecool logo" style="width:300px;height:50px;">
-            <ul>
-                <li><a href="/index-part1">Home part1</a></li>
-                <li><a href="/index">Home part2</a></li>
-                <li class="dropdown">
-                    <a href="/index-part1">Part 1 queries</a>
-                    <div class="dropdown-content">
-                        <a href="/mentors-all">All mentors</a>
-                        <a href="/applicants-all">All applicants</a>
-                        <a href="/nicknames-of-mentors">Nicknames of mentors</a>
-                        <a href="/carols-phone-number">Carol's phone number</a>
-                        <a href="/real-owner-of-hat">Real owner of hat</a>
-                        <a href="/new-applicant">New applicant</a>
-                        <a href="/jemimas-new-phone-number">Jemima's new phone number</a>
-                        <a href="/application-cancel">Application cancel</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                <a href="/index" class="dropbtn">Part 2 queries</a>
-                    <div class="dropdown-content">
-                        <a href="/mentors">Mentors and schools</a>
-                        <a href="/all-school">All schools</a>
-                        <a href="/mentors-by-country">Mentors by country</a>
-                        <a href="/contacts">Contacts</a>
-                        <a href="/applicants">Applicants</a>
-                        <a href="/applicants-and-mentors">Applicants and mentors</a>
-                    </div>
-                </li>
-            </ul>
+        <div id="mySidebar" class="sidebar">
+            <img href="javascript:void(0)" src="/static/img/close.svg" class ="closebtn" style="width:20px;height:20px;" onclick="closeNav()">
+            <h2>Search</h2>
+            <form action="/search" method="POST">
+                <input type="text" name="search" placeholder="Search..">
+                <h3>Database</h3>
+                <ul>
+                    <li>
+                        <input id="mentors" type="radio" name="database" value="mentors" checked>
+                        <label for="mentors">Mentor</label>
+                    </li>
+                    <li>
+                        <input id="applicants" type="radio" name="database" value="applicants">
+                        <label for="applicants">Applicants</label>
+                    </li>
+                </ul>
+            </form>
         </div>
-        <h1>Application process - SQL part 1</h1>
-        <div class="sql-links">
-            <ul>
-                <li><a href="/mentors-all">All mentors page</a></li>
-                <li><a href="/applicants-all">All applicants page</a></li>
-                <li><a href="/nicknames-of-mentors">Nicknames of mentors from Miskolc page</a></li>
-                <li><a href="/carols-phone-number">Carol's phone number page</a></li>
-                <li><a href="/real-owner-of-hat">Real owner of hat page</a></li>
-                <li><a href="/new-applicant">New applicant page</a></li>
-                <li><a href="/jemimas-new-phone-number">Jemima's new phone number page</a></li>
-                <li><a href="/application-cancel">Application cancel page</a></li> 
-            </ul>
+        <div id="main">
+            <div class="menu-top">
+                <img src="/static/img/codecool_logo.svg" alt="Codecool logo" style="width:300px;height:50px;">
+                <ul>
+                    <li><a href="/index-part1">Home part1</a></li>
+                    <li><a href="/index">Home part2</a></li>
+                    <li class="dropdown">
+                        <a href="/index-part1">Part 1 queries</a>
+                        <div class="dropdown-content">
+                            <a href="/mentors-all">All mentors</a>
+                            <a href="/applicants-all">All applicants</a>
+                            <a href="/nicknames-of-mentors">Nicknames of mentors</a>
+                            <a href="/carols-phone-number">Carol's phone number</a>
+                            <a href="/real-owner-of-hat">Real owner of hat</a>
+                            <a href="/new-applicant">New applicant</a>
+                            <a href="/jemimas-new-phone-number">Jemima's new phone number</a>
+                            <a href="/application-cancel">Application cancel</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                    <a href="/index" class="dropbtn">Part 2 queries</a>
+                        <div class="dropdown-content">
+                            <a href="/mentors">Mentors and schools</a>
+                            <a href="/all-school">All schools</a>
+                            <a href="/mentors-by-country">Mentors by country</a>
+                            <a href="/contacts">Contacts</a>
+                            <a href="/applicants">Applicants</a>
+                            <a href="/applicants-and-mentors">Applicants and mentors</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <img src="/static/img/search.svg" class ="sidebar_icon" alt="Sidebar icon" style="width:50px;height:50px;" onclick="openNav()">
+            <h1>Application process - SQL part 1</h1>
+            <div class="sql-links">
+                <ul>
+                    <li><a href="/mentors-all">All mentors page</a></li>
+                    <li><a href="/applicants-all">All applicants page</a></li>
+                    <li><a href="/nicknames-of-mentors">Nicknames of mentors from Miskolc page</a></li>
+                    <li><a href="/carols-phone-number">Carol's phone number page</a></li>
+                    <li><a href="/real-owner-of-hat">Real owner of hat page</a></li>
+                    <li><a href="/new-applicant">New applicant page</a></li>
+                    <li><a href="/jemimas-new-phone-number">Jemima's new phone number page</a></li>
+                    <li><a href="/application-cancel">Application cancel page</a></li> 
+                </ul>
+            </div>
         </div>
+        <script>
+            function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft= "0";
+            }
+        </script>
     </body>
 </html>
